@@ -17,8 +17,7 @@ public class Input {
             String userInput = input.nextLine();
             num = Integer.parseInt(userInput);
         } catch (RuntimeException rex) {
-            System.err.println("You must enter an option between 1-5");
-            rex.printStackTrace();
+            System.err.println("You must enter an option between 1-5: ");
             return getInt();
         }
         if (num >= 1 && num <= 5) {
@@ -28,4 +27,6 @@ public class Input {
             return getInt();
         }
     }
+
+
 }
