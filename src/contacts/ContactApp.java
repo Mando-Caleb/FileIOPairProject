@@ -9,10 +9,11 @@ public class ContactApp {
 
         switch(userInput) {
             case 1:
-                ContactMethods.printContacts();
+                ContactMethods.viewContacts();  //will take in a string of contacts
                 break;
             case 2:
-                //method to add contact
+                Input.getContactInfo();
+                ContactMethods.addContact()
                 break;
             case 3:
                 //method to search a contact by name

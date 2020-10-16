@@ -1,9 +1,11 @@
 package util;
 
 import java.util.Scanner;
+import contacts.ContactInfo;
 
 public class Input {
     protected Scanner input;
+
 
     public Input(){
         this.input = new Scanner(System.in);
@@ -27,6 +29,13 @@ public class Input {
             return getInt();
         }
     }
+
+//    public void getContactInfo(String aName) {}
+    public void getContactInfo(String aName, int aNumber) {
+
+
+    }
+
 
 
 }
