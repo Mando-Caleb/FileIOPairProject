@@ -9,7 +9,7 @@ public class ContactApp {
 
         switch(userInput) {
             case 1:
-                //method to view contacts
+                ContactMethods.printContacts();
                 break;
             case 2:
                 //method to add contact

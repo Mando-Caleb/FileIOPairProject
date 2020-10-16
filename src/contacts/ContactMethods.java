@@ -15,5 +15,12 @@ public class ContactMethods {
 
 
 
+    public static void printContacts() {
+        System.out.println("Name | Phone number\n" +
+                "---------------");
+    }
+
+
+
 
 }
