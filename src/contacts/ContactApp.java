@@ -6,8 +6,23 @@ public class ContactApp {
         ContactMethods.printMenu();
         Input input = new Input();
         int userInput = input.getInt();
-        System.out.println();
-        System.out.println(userInput);
 
+        switch(userInput) {
+            case 1:
+                //method to view contacts
+                break;
+            case 2:
+                //method to add contact
+                break;
+            case 3:
+                //method to search a contact by name
+                break;
+            case 4:
+                //method to delete an existing contact
+                break;
+            case 5:
+                System.out.println("Goodbye");
+                System.exit(1);
+        }
     }
 }

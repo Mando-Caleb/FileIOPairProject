@@ -11,10 +11,6 @@ public class ContactMethods {
                 "3. Search a contact by name.\n" +
                 "4. Delete an existing contact.\n" +
                 "5. Exit.\n");
-//        Input input = new Input();
-//        int userInput = input.getInt();
-//        System.out.println();
-//        System.out.println(userInput);
     }
 
 
