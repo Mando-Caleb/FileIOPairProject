@@ -12,4 +12,6 @@ public class ContactInfo {
     public String getName() {return this.name;}
     public int getNumber() {return this.number;}
 
+
+
 }
