@@ -31,8 +31,9 @@ public class Input {
     }
 
 //    public void getContactInfo(String aName) {}
-    public void getContactInfo(String aName, int aNumber) {
-
+    public void getContactInfo(String contactInfo) {
+        System.out.println("");
+        String userInput = input.nextLine();
 
     }
 

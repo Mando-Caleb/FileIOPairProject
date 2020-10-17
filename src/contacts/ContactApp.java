@@ -28,7 +28,7 @@ public class ContactApp {
                     break;
                 case 2:
 //                Input.getContactInfo();
-//                ContactMethods.addContact()
+                ContactMethods.addContact();
                     break;
                 case 3:
                     //method to search a contact by name

@@ -40,8 +40,10 @@ public class ContactMethods {
             System.out.printf("%s\n", fileContents.get(i));
         }
     }
-    public String addContact(String aName, int aNumber) {
-        System.out.println("To add a contact, please enter a name and number: ");
+    public static String addContact() {
+        System.out.println("To add a contact, please enter a name and number: \n" +
+                "ex: name-2101112222");
+
         return "";
     }
     public String searchContact (String aName) {
