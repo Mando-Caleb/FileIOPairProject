@@ -15,7 +15,7 @@ public class ContactApp {
         try {
             Path dataFilePath = ContactMethods.createDirectoryAndFile(directoryName, fileName);
 
-            List<String> contactList = Arrays.asList("caleb", "mando");
+            List<String> contactList = Arrays.asList("caleb | 2102742144", "mando | 2109953867");
             Files.write(dataFilePath, contactList);
 
             ContactMethods.printMenu();
@@ -24,7 +24,7 @@ public class ContactApp {
 
             switch(userInput) {
                 case 1:
-                    //ContactMethods.viewContacts();  //will take in a string of contacts
+                    ContactMethods.viewContacts(dataFilePath);  //will take in a string of contacts
                     break;
                 case 2:
 //                Input.getContactInfo();

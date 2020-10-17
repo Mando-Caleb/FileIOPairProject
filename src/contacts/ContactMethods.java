@@ -37,7 +37,7 @@ public class ContactMethods {
                 "---------------");
         List<String> fileContents = Files.readAllLines(filePath);
         for (int i = 0; i < fileContents.size(); i++) {
-            System.out.printf("%");
+            System.out.printf("%s\n", fileContents.get(i));
         }
     }
     public String addContact(String aName, int aNumber) {
