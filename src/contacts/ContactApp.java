@@ -15,7 +15,7 @@ public class ContactApp {
         try {
             Path dataFilePath = ContactMethods.createDirectoryAndFile(directoryName, fileName);
 
-            List<String> contactList = Arrays.asList();
+            List<String> contactList = Arrays.asList("caleb", "mando");
             Files.write(dataFilePath, contactList);
 
             ContactMethods.printMenu();
