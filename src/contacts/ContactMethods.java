@@ -2,8 +2,27 @@ package contacts;
 
 import util.Input;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
 public class ContactMethods {
 
+    public static Path createDirectoryAndFile(String directoryName, String fileName) throws IOException {
+        Path directoryPath = Paths.get(directoryName);
+        Path dataFilePath = Paths.get(directoryName, fileName);
+
+        if (Files.notExists(directoryPath)) {
+            Files.createDirectories(directoryPath);
+        }
+
+        if (!Files.exists(dataFilePath)) {
+            Files.createFile(dataFilePath);
+        }
+        return dataFilePath;
+    }
     public static void printMenu(){
         System.out.println("Welcome to your Contact book!");
         System.out.println("1. View contacts.\n" +
@@ -13,12 +32,13 @@ public class ContactMethods {
                 "5. Exit.\n");
     }
 
-    public static void viewContacts() { //will take in a string of contacts
+    public static void viewContacts(Path filePath) throws IOException { //will take in a string of contacts
         System.out.println("Name | Phone number\n" +
                 "---------------");
-//        for (String contact : contacts) {
-//            System.out.printf("%s");
-//        }
+        List<String> fileContents = Files.readAllLines(filePath);
+        for (int i = 0; i < fileContents.size(); i++) {
+            System.out.printf("%");
+        }
     }
     public String addContact(String aName, int aNumber) {
         System.out.println("To add a contact, please enter a name and number: ");
