@@ -27,8 +27,7 @@ public class ContactApp {
                     ContactMethods.viewContacts(dataFilePath);  //will take in a string of contacts
                     break;
                 case 2:
-//                Input.getContactInfo();
-                ContactMethods.addContact();
+                ContactMethods.addContact(dataFilePath);
                     break;
                 case 3:
                     //method to search a contact by name

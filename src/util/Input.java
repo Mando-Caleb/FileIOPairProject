@@ -31,9 +31,23 @@ public class Input {
     }
 
 //    public void getContactInfo(String aName) {}
-    public void getContactInfo(String contactInfo) {
-        System.out.println("");
-        String userInput = input.nextLine();
+    public String getContactInfo() {
+        System.out.println("Enter a name: ");
+        String aName = input.nextLine();
+        System.out.println("Enter a number: ");
+        String aNumber = input.nextLine();
+        String userInput = aName + "-" + aNumber;
+
+        if (userInput.equals(aName + "-" + aNumber)) {
+            //Files.write(dataFilePath, Arrays.asList(userInput), StandardOpenOption.APPEND);
+            //FileIO.printFileContents(dataFilePath);
+            System.out.println(userInput);
+            return userInput;
+        }
+        else {
+            System.err.println("That's not the proper format");
+            return getContactInfo();
+        }
 
     }
 

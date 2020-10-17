@@ -40,9 +40,11 @@ public class ContactMethods {
             System.out.printf("%s\n", fileContents.get(i));
         }
     }
-    public static String addContact() {
+    public static String addContact(Path filePath) {
         System.out.println("To add a contact, please enter a name and number: \n" +
                 "ex: name-2101112222");
+        Input userInput = new Input();
+        String contactInfo = userInput.getContactInfo();
 
         return "";
     }
