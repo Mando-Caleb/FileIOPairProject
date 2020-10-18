@@ -70,7 +70,6 @@ public class ContactMethods {
 //            else {
 //                System.out.print(ch[i]);
 //            }
-//        }
     }
     public String searchContact (String aName) {
         return "";
