@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
 import java.util.List;
 
 public class ContactMethods {
@@ -24,14 +22,6 @@ public class ContactMethods {
             Files.createFile(dataFilePath);
         }
         return dataFilePath;
-    }
-    public static void printMenu(){
-        System.out.println("Welcome to your Contact book!");
-        System.out.println("1. View contacts.\n" +
-                "2. Add a new contact.\n" +
-                "3. Search a contact by name.\n" +
-                "4. Delete an existing contact.\n" +
-                "5. Exit.\n");
     }
 
     public static void viewContacts(Path filePath) throws IOException { //will take in a string of contacts
@@ -71,7 +61,8 @@ public class ContactMethods {
 //                System.out.print(ch[i]);
 //            }
     }
-    public String searchContact (String aName) {
+    public String searchContact () {
+        System.out.println("To start your search, please enter ");
         return "";
     }
     public String deleteContact(String aName) {

@@ -50,4 +50,13 @@ public class Input {
         return input.nextLine();
     }
 
+    public boolean yesNo() {
+        return yesNo("Please enter yes or no");
+    }
+    public boolean yesNo(String prompt) {
+        System.out.println(prompt);
+        String userInput = this.input.nextLine();
+        return (userInput.trim().toLowerCase().equals("y") ||
+                userInput.trim().toLowerCase().equals("yes"));
+    }
 }
