@@ -4,6 +4,7 @@ import util.Input;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,8 +16,9 @@ public class ContactApp {
         try {
             Path dataFilePath = ContactMethods.createDirectoryAndFile(directoryName, fileName);
 
-            List<String> contactList = Arrays.asList("caleb | 2102742144", "mando | 2109953867");
-            Files.write(dataFilePath, contactList);
+//  DEFAULT NUMBERS - commented out because it will always rewrite contacts.txt to only contain "caleb | 2102742144", "mando | 2109953867"
+//  List<String> contactList = Arrays.asList("caleb | 2102742144", "mando | 2109953867");
+//  Files.write(dataFilePath, contactList);
 
             ContactMethods.printMenu();
             Input input = new Input();
@@ -27,7 +29,9 @@ public class ContactApp {
                     ContactMethods.viewContacts(dataFilePath);  //will take in a string of contacts
                     break;
                 case 2:
-                ContactMethods.addContact(dataFilePath);
+                    //Line 32 will write to our contacts.txt ContactMethods.addContact()
+                    Files.write(dataFilePath, Arrays.asList(ContactMethods.addContact()), StandardOpenOption.APPEND);
+                ContactMethods.viewContacts(dataFilePath);
                     break;
                 case 3:
                     //method to search a contact by name
