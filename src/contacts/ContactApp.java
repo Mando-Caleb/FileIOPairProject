@@ -11,6 +11,10 @@ import java.util.Arrays;
 public class ContactApp {
 
     public static void main(String[] args) throws IOException {
+        String directoryName = "./src/contacts";
+        String fileName = "contacts.txt";
+        Path dataFilePath = ContactMethods.createDirectoryAndFile(directoryName, fileName);
+        ContactMethods.viewContacts(dataFilePath);
         contactMenuOptions();
     }
 
@@ -20,7 +24,6 @@ public class ContactApp {
 
         try {
             Path dataFilePath = ContactMethods.createDirectoryAndFile(directoryName, fileName);
-            ContactMethods.viewContacts(dataFilePath);
 
             Input input = new Input();
             int userInput = input.getInt();
@@ -36,15 +39,11 @@ public class ContactApp {
                     optionsMenu();
                     break;
                 case 3:
-                    //method to search a contact by name
-//                    System.out.println("We're sorry, search is not an available feature yet");
                     ContactMethods.searchContact(dataFilePath);
                     optionsMenu();
                     break;
                 case 4:
-                    //method to delete an existing contact
-//                    System.out.println("We're sorry, delete is not an available feature yet");
-                    ContactMethods.searchDeleteContact(dataFilePath);
+                    ContactMethods.deleteContact(dataFilePath);
                     optionsMenu();
                     break;
                 case 5:

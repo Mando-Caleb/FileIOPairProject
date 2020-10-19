@@ -13,6 +13,7 @@ public class Input {
         this.input = new Scanner(System.in);
     }
 
+    //modify getInt() so it doesnt input the Strings below
     public int getInt() {
         System.out.println();
         System.out.println("Menu");

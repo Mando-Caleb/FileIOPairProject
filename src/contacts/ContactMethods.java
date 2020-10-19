@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContactMethods {
@@ -74,17 +76,36 @@ public class ContactMethods {
         }
     }
 
-    public static void searchDeleteContact(Path filePath) throws IOException {
+    public static void deleteContact(Path filePath) throws IOException {
         System.out.println("Which contact would you like to delete?");
         Input input = new Input();
         String searchName = input.getContactName();
         List<String> fileContents = Files.readAllLines(filePath);
         for (int i = 0; i < fileContents.size(); i++) {
-            if (fileContents.get(i).startsWith(searchName))
+            if (fileContents.get(i).startsWith(searchName)) {
                 System.out.printf("The contact you're trying to delete is: %s\n", fileContents.get(i));
-            String extractContact = fileContents.get(i);
+                if (input.confirm()) {
+                    List<String> modifiedList = new ArrayList<>();
+                    for (String item : fileContents) {
+                        if (!item.equals(fileContents.get(i))) {
+                            modifiedList.add(item);
+                        }
+                    }
+                    Files.write(filePath, modifiedList);
+                    viewContacts(filePath);
+                }
+                else {
+                    System.out.println("You don't want to delete a contact?\nIf you do want to delete, enter 'yes', else enter 'no'.");
+                    if (input.yesNo()) {deleteContact(filePath);}
+                    else {
+                        System.out.println();
+                        System.out.println("Taking you back to the main menu!\n");
+                        ContactApp.printMenu();
+                    }
+                }
+            }
+
         }
-        input.confirm();
 
     }
 
