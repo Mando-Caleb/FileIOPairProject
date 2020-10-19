@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ContactMethods {
+
 
     public static Path createDirectoryAndFile(String directoryName, String fileName) throws IOException {
         Path directoryPath = Paths.get(directoryName);
@@ -109,14 +109,6 @@ public class ContactMethods {
 
     }
 
-//    public static void deleteContact(Path path) throws IOException {
-//
-//        List<String> fileContents = Files.readAllLines(path);
-//        for (int i = 0; i < fileContents.size(); i++) {
-//            if (fileContents.get(i).startsWith(searchName))
-//                System.out.printf("The contact you're trying to delete is: %s\n", fileContents.get(i));
-//
-//        }
 }
 
 
