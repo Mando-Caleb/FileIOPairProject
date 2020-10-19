@@ -53,12 +53,12 @@ public class ContactApp {
                         break;
                     case 5:
                         System.out.println("Ok, Goodbye!");
-                        ContactMethods.pokemon();;
+                        ContactMethods.kennethEasterEgg();;
                         System.exit(0);
                 }
             }else{
                 System.out.println("Okay!, See ya later!");
-                ContactMethods.pokemon();
+                ContactMethods.kennethEasterEgg();
                 System.exit(1);
             }
         } catch (IOException ex) {
