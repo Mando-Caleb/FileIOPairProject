@@ -109,7 +109,7 @@ public class ContactMethods {
 
     }
 
-    public static void pokemon(){
+    public static void kennethEasterEgg(){
         int randomNum = (int) Math.floor(Math.random() * 12);
         switch (randomNum){
             case 1:
