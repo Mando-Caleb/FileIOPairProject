@@ -14,9 +14,11 @@ public class Input {
     }
 
     //modify getInt() so it doesnt input the Strings below
+    //refactor getInt() to only get integer for switch case
+    //create input method to ask if the user wants to go to the main menu
     public int getInt() {
         System.out.println();
-        System.out.println("Menu");
+        System.out.println("Do you want to go to the menu [Y/N]");
         yesNo();
         ContactApp.printMenu();
         System.out.println("\"Enter an option (1, 2, 3, 4 or 5):\"");
@@ -40,16 +42,6 @@ public class Input {
     public String getContactName() {
         System.out.println("Enter a name: ");
         return input.nextLine();
-//        String userInput = aName + "-" + aNumber;
-//
-//        if (userInput.equals(aName + "-" + aNumber)) {
-//            System.out.println(userInput);
-//            return userInput;
-//        }
-//        else {
-//            System.err.println("That's not the proper format");
-//            return getContactInfo();
-//        }
     }
     public String getContactNumber() {
         System.out.println("Enter a number: ");

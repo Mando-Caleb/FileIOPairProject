@@ -13,6 +13,7 @@ public class ContactApp {
     public static void main(String[] args) throws IOException {
         String directoryName = "./src/contacts";
         String fileName = "contacts.txt";
+
         Path dataFilePath = ContactMethods.createDirectoryAndFile(directoryName, fileName);
         ContactMethods.viewContacts(dataFilePath);
         contactMenuOptions();
@@ -29,11 +30,10 @@ public class ContactApp {
             int userInput = input.getInt();
             switch (userInput) {
                 case 1:
-                    ContactMethods.viewContacts(dataFilePath); //will take in a string of contacts
+                    ContactMethods.viewContacts(dataFilePath);
                     optionsMenu();
                     break;
                 case 2:
-                    //Line 32 will write to our contacts.txt ContactMethods.addContact()
                     Files.write(dataFilePath, Arrays.asList(ContactMethods.addContact()), StandardOpenOption.APPEND);
                     ContactMethods.viewContacts(dataFilePath);
                     optionsMenu();
@@ -48,7 +48,7 @@ public class ContactApp {
                     break;
                 case 5:
                     System.out.println("Goodbye");
-                    System.exit(1);
+                    System.exit(0);
             }
         } catch (IOException ex) {
             System.err.println("Cannot create the file.");
