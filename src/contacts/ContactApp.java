@@ -37,12 +37,14 @@ public class ContactApp {
                     break;
                 case 3:
                     //method to search a contact by name
-                    System.out.println("We're sorry, search is not an available feature yet");
+//                    System.out.println("We're sorry, search is not an available feature yet");
+                    ContactMethods.searchContact(dataFilePath);
                     optionsMenu();
                     break;
                 case 4:
                     //method to delete an existing contact
-                    System.out.println("We're sorry, delete is not an available feature yet");
+//                    System.out.println("We're sorry, delete is not an available feature yet");
+                    ContactMethods.searchDeleteContact(dataFilePath);
                     optionsMenu();
                     break;
                 case 5:

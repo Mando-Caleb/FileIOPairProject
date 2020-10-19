@@ -32,6 +32,7 @@ public class ContactMethods {
             System.out.printf("%s\n", fileContents.get(i));
         }
     }
+
     //addContact
     public static String addContact() {
         System.out.println("To add a contact, please enter a name and number: \n" +
@@ -61,13 +62,40 @@ public class ContactMethods {
 //                System.out.print(ch[i]);
 //            }
     }
-    public String searchContact () {
-        System.out.println("To start your search, please enter ");
 
-        return "";
-    }
-    public String deleteContact(String aName) {
-        return "";
+    public static void searchContact(Path filePath) throws IOException {
+        System.out.println("To start your search, enter a name to search");
+        Input input = new Input();
+        String searchName = input.getContactName();
+        List<String> fileContents = Files.readAllLines(filePath);
+        for (int i = 0; i < fileContents.size(); i++) {
+            if (fileContents.get(i).startsWith(searchName))
+                System.out.printf("%s\n", fileContents.get(i));
+        }
     }
 
+    public static void searchDeleteContact(Path filePath) throws IOException {
+        System.out.println("Which contact would you like to delete?");
+        Input input = new Input();
+        String searchName = input.getContactName();
+        List<String> fileContents = Files.readAllLines(filePath);
+        for (int i = 0; i < fileContents.size(); i++) {
+            if (fileContents.get(i).startsWith(searchName))
+                System.out.printf("The contact you're trying to delete is: %s\n", fileContents.get(i));
+            String extractContact = fileContents.get(i);
+        }
+        input.confirm();
+
+    }
+
+//    public static void deleteContact(Path path) throws IOException {
+//
+//        List<String> fileContents = Files.readAllLines(path);
+//        for (int i = 0; i < fileContents.size(); i++) {
+//            if (fileContents.get(i).startsWith(searchName))
+//                System.out.printf("The contact you're trying to delete is: %s\n", fileContents.get(i));
+//
+//        }
 }
+
+

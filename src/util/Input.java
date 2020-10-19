@@ -38,7 +38,6 @@ public class Input {
 
     public String getContactName() {
         System.out.println("Enter a name: ");
-
         return input.nextLine();
 //        String userInput = aName + "-" + aNumber;
 //
@@ -60,6 +59,16 @@ public class Input {
         return yesNo("Please enter yes or no");
     }
     public boolean yesNo(String prompt) {
+        System.out.println(prompt);
+        String userInput = this.input.nextLine();
+        return (userInput.trim().toLowerCase().equals("y") ||
+                userInput.trim().toLowerCase().equals("yes"));
+    }
+
+    public boolean confirm() {
+        return yesNo("Are you sure you would like to delete this file? [Y/N]");
+    }
+    public boolean confirm(String prompt) {
         System.out.println(prompt);
         String userInput = this.input.nextLine();
         return (userInput.trim().toLowerCase().equals("y") ||
