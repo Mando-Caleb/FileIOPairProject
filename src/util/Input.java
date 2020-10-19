@@ -18,8 +18,6 @@ public class Input {
     //create input method to ask if the user wants to go to the main menu
     public int getInt() {
         System.out.println();
-        System.out.println("Do you want to go to the menu [Y/N]");
-        yesNo();
         ContactApp.printMenu();
         System.out.println("\"Enter an option (1, 2, 3, 4 or 5):\"");
         int num;
@@ -49,7 +47,7 @@ public class Input {
     }
 
     public boolean yesNo() {
-        return yesNo("Please enter yes or no");
+        return yesNo("Please enter Yes or No");
     }
     public boolean yesNo(String prompt) {
         System.out.println(prompt);
@@ -67,4 +65,6 @@ public class Input {
         return (userInput.trim().toLowerCase().equals("y") ||
                 userInput.trim().toLowerCase().equals("yes"));
     }
+
+
 }

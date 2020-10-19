@@ -16,6 +16,7 @@ public class ContactApp {
 
         Path dataFilePath = ContactMethods.createDirectoryAndFile(directoryName, fileName);
         ContactMethods.viewContacts(dataFilePath);
+
         contactMenuOptions();
     }
 
@@ -27,34 +28,45 @@ public class ContactApp {
             Path dataFilePath = ContactMethods.createDirectoryAndFile(directoryName, fileName);
 
             Input input = new Input();
-            int userInput = input.getInt();
-            switch (userInput) {
-                case 1:
-                    ContactMethods.viewContacts(dataFilePath);
-                    optionsMenu();
-                    break;
-                case 2:
-                    Files.write(dataFilePath, Arrays.asList(ContactMethods.addContact()), StandardOpenOption.APPEND);
-                    ContactMethods.viewContacts(dataFilePath);
-                    optionsMenu();
-                    break;
-                case 3:
-                    ContactMethods.searchContact(dataFilePath);
-                    optionsMenu();
-                    break;
-                case 4:
-                    ContactMethods.deleteContact(dataFilePath);
-                    optionsMenu();
-                    break;
-                case 5:
-                    System.out.println("Goodbye");
-                    System.exit(0);
+            System.out.println("------------------------------------");
+            System.out.println("Do you want to go to the menu?");
+            System.out.println();
+            if(input.yesNo()) {
+                int userInput = input.getInt();
+                switch (userInput) {
+                    case 1:
+                        ContactMethods.viewContacts(dataFilePath);
+                        optionsMenu();
+                        break;
+                    case 2:
+                        Files.write(dataFilePath, Arrays.asList(ContactMethods.addContact()), StandardOpenOption.APPEND);
+                        ContactMethods.viewContacts(dataFilePath);
+                        optionsMenu();
+                        break;
+                    case 3:
+                        ContactMethods.searchContact(dataFilePath);
+                        optionsMenu();
+                        break;
+                    case 4:
+                        ContactMethods.deleteContact(dataFilePath);
+                        optionsMenu();
+                        break;
+                    case 5:
+                        System.out.println("Ok, Goodbye!");
+                        ContactMethods.pokemon();;
+                        System.exit(0);
+                }
+            }else{
+                System.out.println("Okay!, See ya later!");
+                ContactMethods.pokemon();
+                System.exit(1);
             }
         } catch (IOException ex) {
             System.err.println("Cannot create the file.");
             ex.printStackTrace();
         }
     }
+
 
     public static void optionsMenu() {
         Input input = new Input();
