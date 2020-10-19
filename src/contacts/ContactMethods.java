@@ -11,6 +11,7 @@ import java.util.List;
 
 public class ContactMethods {
 
+
     public static Path createDirectoryAndFile(String directoryName, String fileName) throws IOException {
         Path directoryPath = Paths.get(directoryName);
         Path dataFilePath = Paths.get(directoryName, fileName);
