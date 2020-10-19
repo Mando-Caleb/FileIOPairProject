@@ -1,6 +1,8 @@
 package util;
 
 import java.util.Scanner;
+
+import contacts.ContactApp;
 import contacts.ContactInfo;
 
 public class Input {
@@ -11,7 +13,12 @@ public class Input {
         this.input = new Scanner(System.in);
     }
 
+    //modify getInt() so it doesnt input the Strings below
     public int getInt() {
+        System.out.println();
+        System.out.println("Menu");
+        yesNo();
+        ContactApp.printMenu();
         System.out.println("\"Enter an option (1, 2, 3, 4 or 5):\"");
         int num;
 
@@ -30,27 +37,42 @@ public class Input {
         }
     }
 
-//    public void getContactInfo(String aName) {}
-    public String getContactInfo() {
+    public String getContactName() {
         System.out.println("Enter a name: ");
-        String aName = input.nextLine();
+        return input.nextLine();
+//        String userInput = aName + "-" + aNumber;
+//
+//        if (userInput.equals(aName + "-" + aNumber)) {
+//            System.out.println(userInput);
+//            return userInput;
+//        }
+//        else {
+//            System.err.println("That's not the proper format");
+//            return getContactInfo();
+//        }
+    }
+    public String getContactNumber() {
         System.out.println("Enter a number: ");
-        String aNumber = input.nextLine();
-        String userInput = aName + "-" + aNumber;
-
-        if (userInput.equals(aName + "-" + aNumber)) {
-            //Files.write(dataFilePath, Arrays.asList(userInput), StandardOpenOption.APPEND);
-            //FileIO.printFileContents(dataFilePath);
-            System.out.println(userInput);
-            return userInput;
-        }
-        else {
-            System.err.println("That's not the proper format");
-            return getContactInfo();
-        }
-
+        return input.nextLine();
     }
 
+    public boolean yesNo() {
+        return yesNo("Please enter yes or no");
+    }
+    public boolean yesNo(String prompt) {
+        System.out.println(prompt);
+        String userInput = this.input.nextLine();
+        return (userInput.trim().toLowerCase().equals("y") ||
+                userInput.trim().toLowerCase().equals("yes"));
+    }
 
-
+    public boolean confirm() {
+        return yesNo("Are you sure you would like to delete this file? [Y/N]");
+    }
+    public boolean confirm(String prompt) {
+        System.out.println(prompt);
+        String userInput = this.input.nextLine();
+        return (userInput.trim().toLowerCase().equals("y") ||
+                userInput.trim().toLowerCase().equals("yes"));
+    }
 }

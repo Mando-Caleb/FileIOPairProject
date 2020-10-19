@@ -2,16 +2,22 @@ package contacts;
 
 public class ContactInfo {
     private String name;
-    private int number;
+    private String number;
 
-    protected ContactInfo(String aName, int aNumber) {
+    protected ContactInfo(String aName, String aNumber) {
         this.name = aName;
         this.number = aNumber;
     }
 
     public String getName() {return this.name;}
-    public int getNumber() {return this.number;}
+    public String getNumber() {return this.number;}
 
+    public void setName(String contactName) {
+        this.name = contactName;
+    }
+    public void setNumber(String contactNumber) {
+        this.number = contactNumber;
+    }
 
 
 }
