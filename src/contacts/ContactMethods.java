@@ -63,6 +63,7 @@ public class ContactMethods {
     }
     public String searchContact () {
         System.out.println("To start your search, please enter ");
+
         return "";
     }
     public String deleteContact(String aName) {

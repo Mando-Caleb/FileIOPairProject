@@ -1,6 +1,8 @@
 package util;
 
 import java.util.Scanner;
+
+import contacts.ContactApp;
 import contacts.ContactInfo;
 
 public class Input {
@@ -12,6 +14,10 @@ public class Input {
     }
 
     public int getInt() {
+        System.out.println();
+        System.out.println("Menu");
+        yesNo();
+        ContactApp.printMenu();
         System.out.println("\"Enter an option (1, 2, 3, 4 or 5):\"");
         int num;
 

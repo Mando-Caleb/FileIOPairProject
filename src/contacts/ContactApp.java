@@ -11,7 +11,6 @@ import java.util.Arrays;
 public class ContactApp {
 
     public static void main(String[] args) throws IOException {
-        printMenu();
         contactMenuOptions();
     }
 
@@ -21,6 +20,7 @@ public class ContactApp {
 
         try {
             Path dataFilePath = ContactMethods.createDirectoryAndFile(directoryName, fileName);
+            ContactMethods.viewContacts(dataFilePath);
 
             Input input = new Input();
             int userInput = input.getInt();
